@@ -2,7 +2,6 @@ class Api::V1::Merchants::FindController < ApplicationController
   respond_to :json
 
   def show
-    # Merchant.where("NAME ilike ?", params[:name]).first
     respond_with Merchant.find_by(merchant_params)
   end
 

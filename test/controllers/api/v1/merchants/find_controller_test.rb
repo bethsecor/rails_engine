@@ -21,8 +21,8 @@ class Api::V1::Merchants::FindControllerTest < ActionController::TestCase
     Merchant.create(name: 'Beth-Shannon',
                     created_at: "2012-03-27 14:55:09 UTC",
                     updated_at: '2012-03-27 14:55:09 UTC')
-    get :show, params: {name: 'Beth-Shannon'}, format: :json
-    # binding.pry
+    get :show, name: 'Beth-Shannon', format: :json
+
     item = JSON.parse(response.body)
 
     assert_response :success
@@ -35,7 +35,7 @@ class Api::V1::Merchants::FindControllerTest < ActionController::TestCase
     merchant = Merchant.create(name: 'Beth-Lenny',
                                created_at: "2012-03-27 14:54:09 UTC",
                                updated_at: '2012-03-27 14:54:09 UTC')
-    get :show, params: {name: 'Beth-Lenny'}, format: :json
+    get :show, name: 'Beth-Lenny', format: :json
 
     item = JSON.parse(response.body)
 
@@ -49,7 +49,7 @@ class Api::V1::Merchants::FindControllerTest < ActionController::TestCase
     merchant = Merchant.create(name: 'Beth-Lenny',
                                created_at: "2012-03-27 14:54:09 UTC",
                                updated_at: '2012-03-27 14:54:09 UTC')
-    get :show, params: {created_at: "2012-03-27T14:54:09.000Z"}, format: :json
+    get :show, created_at: "2012-03-27T14:54:09.000Z", format: :json
 
     item = JSON.parse(response.body)
 
@@ -63,7 +63,7 @@ class Api::V1::Merchants::FindControllerTest < ActionController::TestCase
     merchant = Merchant.create(name: 'Beth-Lenny',
                                created_at: "2012-03-27 14:54:09 UTC",
                                updated_at: '2012-03-27 14:54:09 UTC')
-    get :show, params: {updated_at: "2012-03-27T14:54:09.000Z"}, format: :json
+    get :show, updated_at: "2012-03-27T14:54:09.000Z", format: :json
 
     item = JSON.parse(response.body)
 
