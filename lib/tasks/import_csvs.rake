@@ -30,7 +30,7 @@ namespace :import do
 
     transactions_filename = File.join Rails.root, "support/transactions.csv"
     CSV.foreach(transactions_filename, :headers => true) do |row|
-      Transaction.create!(row.to_h)
+      Transaction.create!(row.to_h.delete("credit_card_expiration_date"))
     end
   end
 end
