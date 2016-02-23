@@ -14,6 +14,7 @@ gem 'responders'
 group :development, :test do
   gem 'byebug'
   gem 'pry'
+  gem 'database_cleaner'
 end
 
 group :development do
