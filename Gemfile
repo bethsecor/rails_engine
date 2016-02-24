@@ -14,6 +14,9 @@ gem 'responders'
 group :development, :test do
   gem 'byebug'
   gem 'pry'
+  gem 'database_cleaner'
+  gem 'simplecov'
+  gem 'factory_girl'
 end
 
 group :development do

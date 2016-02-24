@@ -2,8 +2,6 @@ class Api::V1::Merchants::FindController < ApplicationController
   respond_to :json
 
   def show
-    # wildcard_search = "%#{search}%"
-    # where("name ILIKE ? OR postal_code LIKE ?", wildcard_search, wildcard_search)
     respond_with Merchant.find_by(merchant_params)
   end
 
