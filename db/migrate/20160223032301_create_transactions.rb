@@ -3,7 +3,7 @@ class CreateTransactions < ActiveRecord::Migration
     enable_extension("citext")
     create_table :transactions do |t|
       t.references :invoice, index: true, foreign_key: true
-      t.citext :credit_card_number
+      t.string :credit_card_number
       t.citext :result
 
       t.timestamps null: false
