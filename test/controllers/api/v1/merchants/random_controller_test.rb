@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class Api::V1::Merchants::RandomControllerTest < ActionController::TestCase
-  test "find by name" do
+  test "find random" do
     merchant = Merchant.create(name: 'Beth-Lenny',
                                created_at: "2012-03-27 14:54:09 UTC",
                                updated_at: '2012-03-27 14:54:09 UTC')
